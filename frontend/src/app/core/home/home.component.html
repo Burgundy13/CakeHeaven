@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col">
+    <ngb-carousel>
+      <ng-template ngbSlide *ngFor="let oneSlide of slideshows">
+        <div class="picsum-img-wrapper">
+          <img [src]="oneSlide.image" alt="Random first slide" width="100%" />
+        </div>
+        <div class="carousel-caption">
+          <h3>{{ oneSlide.text }}</h3>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
