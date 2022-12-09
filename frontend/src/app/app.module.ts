@@ -11,6 +11,7 @@ import { CakesComponent } from './core/cakes/cakes.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CakeDetailsComponent } from './core/cakes/cake-details/cake-details.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileComponent,
     CakesComponent,
     NavBarComponent,
+    CakeDetailsComponent,
   ],
   imports: [
     BrowserModule,

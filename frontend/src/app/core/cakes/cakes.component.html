@@ -20,11 +20,11 @@
 
 <div class="row">
   <div class="col my-2" *ngFor="let itemCake of cakes">
-    <div class="card" style="width: 18rem">
+    <div class="card" style="width: 18rem" [routerLink]="[itemCake._id]">
       <img
         class="card-img-top"
         src="http://localhost:3000/image/cakes/{{ itemCake._id }}.jpg"
-        alt="cake image"
+        alt="cakeImage"
       />
       <div class="card-body">
         <h2>{{ itemCake.name }}</h2>

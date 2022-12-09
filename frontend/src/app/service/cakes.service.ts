@@ -47,4 +47,11 @@ export class CakesService {
       })
     );
   }
+  getCake(id: number): Observable<Cake> {
+    return this.httpClient.get(`${cakesUrl}/${id}`).pipe(
+      map((data: any) => {
+        return new Cake(data);
+      })
+    );
+  }
 }
