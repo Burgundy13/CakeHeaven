@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col my-2">
     <select
-      class="form-control"
+      class="form-control cursor"
       name="filterCakes"
       id="filterCakes"
       style="width: 30%"
@@ -20,15 +20,20 @@
 
 <div class="row">
   <div class="col my-2" *ngFor="let itemCake of cakes">
-    <div class="card" style="width: 18rem" [routerLink]="[itemCake._id]">
+    <div
+      class="card cursor"
+      style="width: 25rem; height: 100%"
+      [routerLink]="[itemCake._id]"
+    >
       <img
         class="card-img-top"
         src="http://localhost:3000/image/cakes/{{ itemCake._id }}.jpg"
+        style="height: 300px; width: 100%"
         alt="cakeImage"
       />
       <div class="card-body">
         <h2>{{ itemCake.name }}</h2>
-        <small><i>Ingredients: </i></small>
+        <small class="fst-italic">Ingredients: </small>
         <p>{{ itemCake.ingredients | titlecase }}</p>
       </div>
     </div>
