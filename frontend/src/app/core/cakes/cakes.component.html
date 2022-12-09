@@ -1,1 +1,35 @@
-<p>cakes works!</p>
+<div class="row">
+  <div class="col my-2">
+    <select
+      class="form-control"
+      name="filterCakes"
+      id="filterCakes"
+      style="width: 30%"
+      (change)="filterIngredients($event)"
+    >
+      <option value="">--</option>
+      <option
+        *ngFor="let itemIngredient of ingredients"
+        value="{{ itemIngredient }}"
+      >
+        {{ itemIngredient | titlecase }}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col my-2" *ngFor="let itemCake of cakes">
+    <div class="card" style="width: 18rem">
+      <img
+        class="card-img-top"
+        src="http://localhost:3000/image/cakes/{{ itemCake._id }}.jpg"
+        alt="cake image"
+      />
+      <div class="card-body">
+        <h2>{{ itemCake.name }}</h2>
+        <p>{{ itemCake.ingredients | titlecase }}</p>
+      </div>
+    </div>
+  </div>
+</div>
