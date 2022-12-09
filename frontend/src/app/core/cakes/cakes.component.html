@@ -1,13 +1,15 @@
 <div class="row">
   <div class="col my-2">
+    <small>Filter by Ingredient: </small>
     <select
-      class="form-control cursor"
+      class="form-select form-select-lg"
       name="filterCakes"
       id="filterCakes"
       style="width: 30%"
       (change)="filterIngredients($event)"
     >
-      <option value="">--</option>
+      <option selected>-Chose Ingredient-</option>
+      <option value="">All</option>
       <option
         *ngFor="let itemIngredient of ingredients"
         value="{{ itemIngredient }}"
@@ -19,10 +21,10 @@
 </div>
 
 <div class="row">
-  <div class="col my-2" *ngFor="let itemCake of cakes">
+  <div class="col my-2 text-center" *ngFor="let itemCake of cakes">
     <div
       class="card cursor"
-      style="width: 25rem; height: 100%"
+      style="width: 25rem; height: 100%; margin: 0 auto"
       [routerLink]="[itemCake._id]"
     >
       <img
