@@ -3,10 +3,12 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Cake } from '../model/cake';
 import { SlideShow } from '../model/slideshow';
+import { User } from '../model/user';
 
 const slideUrl = 'http://localhost:3000/api/slideshow';
 const cakesUrl = 'http://localhost:3000/api/cakes';
 const ingredientsUrl = ' http://localhost:3000/api/ingredients';
+const userUrl = ' http://localhost:3000/api/user';
 
 @Injectable({
   providedIn: 'root',
@@ -51,6 +53,21 @@ export class CakesService {
     return this.httpClient.get(`${cakesUrl}/${id}`).pipe(
       map((data: any) => {
         return new Cake(data);
+      })
+    );
+  }
+
+  getUser(): Observable<User> {
+    return this.httpClient.get(userUrl).pipe(
+      map((data: any) => {
+        return data && new User(data[0]);
+      })
+    );
+  }
+  updateUser(user: User): Observable<User> {
+    return this.httpClient.put(`${userUrl}/${user._id}`, user).pipe(
+      map((data: any) => {
+        return new User(data);
       })
     );
   }
