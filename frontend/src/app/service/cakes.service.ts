@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Cake } from '../model/cake';
+import { Message } from '../model/message';
 import { SlideShow } from '../model/slideshow';
 import { User } from '../model/user';
 
@@ -9,6 +10,7 @@ const slideUrl = 'http://localhost:3000/api/slideshow';
 const cakesUrl = 'http://localhost:3000/api/cakes';
 const ingredientsUrl = ' http://localhost:3000/api/ingredients';
 const userUrl = ' http://localhost:3000/api/user';
+const messageUrl = 'http://localhost:3000/api/messages';
 
 @Injectable({
   providedIn: 'root',
@@ -70,5 +72,8 @@ export class CakesService {
         return new User(data);
       })
     );
+  }
+  postMessage(message: Message): Observable<any> {
+    return this.httpClient.post(messageUrl, message);
   }
 }
