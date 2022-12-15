@@ -8,4 +8,4 @@ Project was created as part of 'FTN Informatika' Advanced Front-end Development 
 
 Backend: open terminal in the backend folder and run 'npm install' and after that 'npm start'. - This will start server, dont close the terminal.
 
-Frontend: open terminal in the frontend folder and run 'npm install' and after that 'ng serve'. Navigate to 'http://localhost:4200/
+Frontend: open terminal in the frontend folder and run 'npm install' and after that 'ng serve'. Navigate to 'http://localhost:4200/'
